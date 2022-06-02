@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 export const toggleContext = React.createContext();
 
-export const ToggleComponent = ({ children }) => {
+export const ToggleContext = ({ children }) => {
   const [color, setColor] = useState("black");
 
   const toggleColor = () => {
