@@ -4,7 +4,6 @@ const immer = require("immer");
 
 const CAKE_ORDERED = "CAKE_ORDERED";
 const CAKE_RESTOCK = "CAKE_RESTOCK";
-
 const ICECREAM_ORDERED = "ICECREAM_ORDERED";
 const ICECREAM_RESTOCK = "ICECREAM_RESTOCK";
 
@@ -16,20 +15,17 @@ const orderCake = () => {
     type: CAKE_ORDERED,
   };
 };
-
 const restockCake = (quantity) => {
   return {
     type: CAKE_RESTOCK,
     payload: quantity,
   };
 };
-
 const orderIcecream = () => {
   return {
     type: ICECREAM_ORDERED,
   };
 };
-
 const restockIcecream = (quantity) => {
   return {
     type: ICECREAM_RESTOCK,
