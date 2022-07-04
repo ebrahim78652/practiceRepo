@@ -1,22 +1,32 @@
 import React from 'react'
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import axios from "axios";
+import { idText } from 'typescript';
 type superHero= {
   id: number,
   "name": string,
   "alterEgo": string
 }
+const fetchUsers = async () => {
+  const res = await fetch("http://localhost:4000/superheroes1");
+  if(!res.ok){
+    throw new Error("Something went wrong!");
+  }
+  return res.json();
+};
 
 export const RQSuperHeroesPage = () => {
-  const { isLoading, error, data, isFetching } = useQuery("repoData", () =>
-  axios.get('http://localhost:4000/superheroes'
-  ).then((res) => {
-    console.log(data);
-    return res.data})
-);
+  const { isLoading, error, data, isFetching, isError } = useQuery("repoData",fetchUsers);
+
 
     if(isLoading){
       return (<h2>Loading!</h2>)
+    }
+
+    if(isError && error instanceof Error){
+      return (
+        <h2>{error.message}</h2>
+      )
     }
 
     return (
