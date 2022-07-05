@@ -8,9 +8,8 @@ type superHero= {
   "alterEgo": string
 }
 
-export const RQSuperHeroesPage = () => {
-  const [isEnabled, setEnabled]= useState(false);
-  const {isLoading, isError, error, data, refetch} = useSuperheroes(isEnabled, setEnabled);
+export const RQSuperHeroesPageTest = () => {
+  const {isLoading, isError, error, data, refetch} = useSuperheroes();
 
     if(isLoading){
       return (<h2>Loading!</h2>)
@@ -30,9 +29,7 @@ export const RQSuperHeroesPage = () => {
             return <div key={element.id}>{element.name}</div>
           })}
         </div>}
-        <button onClick={()=>{
-          setEnabled(true);
-          }}>Fetch heroes</button>
+     
       </>
     )
   }
