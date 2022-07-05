@@ -8,7 +8,7 @@ type superHero= {
   "alterEgo": string
 }
 const fetchUsers = async () => {
-  const res = await fetch("http://localhost:4000/superheroes1");
+  const res = await fetch("http://localhost:4000/superheroes");
   if(!res.ok){
     throw new Error("Something went wrong!");
   }
@@ -16,7 +16,9 @@ const fetchUsers = async () => {
 };
 
 export const RQSuperHeroesPage = () => {
-  const { isLoading, error, data, isFetching, isError } = useQuery("repoData",fetchUsers);
+  const { isLoading, error, data, isFetching, isError } = useQuery("superheroes_names",fetchUsers, {
+    staleTime: 5 * 1000
+  });
 
 
     if(isLoading){
