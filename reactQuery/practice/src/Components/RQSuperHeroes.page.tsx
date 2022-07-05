@@ -16,8 +16,9 @@ const fetchUsers = async () => {
 };
 
 export const RQSuperHeroesPage = () => {
-  const { isLoading, error, data, isFetching, isError } = useQuery("superheroes_names",fetchUsers, {
-    staleTime: 5 * 1000
+  const { isLoading, error, data, isFetching, isError, refetch } = useQuery("superheroes_names",fetchUsers, {
+    staleTime: 5 * 1000,
+    enabled: false, 
   });
 
 
@@ -34,11 +35,12 @@ export const RQSuperHeroesPage = () => {
     return (
       <>
         <h2>RQ Super Heroes Page</h2>
-        <div>
+        {data && <div>
           {data.map((element: superHero) => {
             return <div key={element.id}>{element.name}</div>
           })}
-        </div>
+        </div>}
+        <button onClick={()=>{refetch()}}>Fetch heroes</button>
       </>
     )
   }
