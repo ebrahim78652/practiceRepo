@@ -8,6 +8,8 @@ type superHero= {
   "alterEgo": string
 }
 
+
+
 export const RQSuperHeroesPageTest = () => {
   const {isLoading, isError, error, data, refetch} = useSuperheroes();
 
@@ -25,7 +27,7 @@ export const RQSuperHeroesPageTest = () => {
       <>
         <h2>RQ Super Heroes Page</h2>
         {data && <div>
-          {data.map((element: superHero) => {
+          {data.map((element: superHero|{name: string, id:number}) => {
             return <div key={element.id}>{element.name}</div>
           })}
         </div>}

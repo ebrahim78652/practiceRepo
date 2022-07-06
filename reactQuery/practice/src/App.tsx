@@ -8,6 +8,7 @@ import { BrowserRouter , Routes, Route, Link } from 'react-router-dom'
 import { QueryClient, QueryClientProvider} from "react-query";
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { RQSuperHeroesPageTest } from './Components/RQSuperHeroesTest';
+import HeroInfo from './Components/HeroInfo';
 
 const queryClient = new QueryClient();
 
@@ -15,24 +16,7 @@ function App() {
   return (
     <div>
         <QueryClientProvider client={queryClient}>
-      
-      <Routes>
-        <Route path='/super-heroes' element = {<SuperHeroesPage/>}>
-        </Route>
-
-        <Route path='/rq-super-heroes' element = {<RQSuperHeroesPage/> }>
-        </Route>
-
-        <Route path='/rq-super-heroes_test' element = {<RQSuperHeroesPageTest/> }>
-        </Route>
-
-        <Route path='/' element = {<HomePage />}>
-    
-        </Route>
-      </Routes>
-
-
-      <nav>
+        <nav>
         <ul>
           <li>
             <Link to='/'>Home</Link>
@@ -48,6 +32,26 @@ function App() {
           </li>
         </ul>
       </nav>
+      <Routes>
+        <Route path='/super-heroes' element = {<SuperHeroesPage/>}>
+        </Route>
+
+        <Route path='/rq-super-heroes' element = {<RQSuperHeroesPage/> }>
+        </Route>
+
+        <Route path='/rq-super-heroes_test' element = {<RQSuperHeroesPageTest/> }>
+        </Route>
+
+        <Route path='/rq-super-heroes-info/:id' element = {<HeroInfo/> }>
+        </Route>
+
+        <Route path='/' element = {<HomePage />}>
+    
+        </Route>
+      </Routes>
+
+
+    
       <ReactQueryDevtools initialIsOpen={true} />
       </QueryClientProvider>
 
