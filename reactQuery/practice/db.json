@@ -16,6 +16,25 @@
         "alterEgo": "Princess Diana"
       }
       
-      ]
+      ],
+
+      "friends":  [
+        {
+          "id": 1,
+          "name": "Mathew",
+          "alterEgo": "chandler"
+        },
+        {
+          "id": 2,
+          "name": "Rachel",
+          "alterEgo": "Jenifer"
+        },
+        {
+          "id": 3,
+          "name": "Ross",
+          "alterEgo": "David"
+        }
+        
+        ]
 
   }

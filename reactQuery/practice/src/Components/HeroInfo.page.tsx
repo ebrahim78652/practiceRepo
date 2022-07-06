@@ -18,9 +18,9 @@ const fetchHeroById = async ({queryKey}:{queryKey:(string | undefined)[]} )=>{
 export default function HeroInfo() {
 
   let { id } = useParams();
-  const {data, isLoading, error, isError, isFetching } = useQuery(["hero_info" , id], fetchHeroById)
+  const {data } = useQuery(["hero_info" , id], fetchHeroById)
 
-  return (
+  return ( 
     <div>{data?.name} - {data?.alterEgo}</div>
   )
 }

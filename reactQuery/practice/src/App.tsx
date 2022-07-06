@@ -8,7 +8,8 @@ import { BrowserRouter , Routes, Route, Link } from 'react-router-dom'
 import { QueryClient, QueryClientProvider} from "react-query";
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { RQSuperHeroesPageTest } from './Components/RQSuperHeroesTest';
-import HeroInfo from './Components/HeroInfo';
+import HeroInfo from './Components/HeroInfo.page';
+import ParellalQueries from './Components/ParellalQueries';
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,9 @@ function App() {
           <li>
             <Link to='/rq-super-heroes_test'>RQ Super Heroes Test</Link>
           </li>
+          <li>
+            <Link to='/parellal-queries'>Parellal Queries</Link>
+          </li>
         </ul>
       </nav>
       <Routes>
@@ -43,6 +47,9 @@ function App() {
         </Route>
 
         <Route path='/rq-super-heroes-info/:id' element = {<HeroInfo/> }>
+        </Route>
+
+        <Route path='/parellal-queries' element = {<ParellalQueries/> }>
         </Route>
 
         <Route path='/' element = {<HomePage />}>
