@@ -10,6 +10,8 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 import { RQSuperHeroesPageTest } from './Components/RQSuperHeroesTest';
 import HeroInfo from './Components/HeroInfo.page';
 import ParellalQueries from './Components/ParellalQueries';
+import DynamicParellalQueries from './Components/DynamicParellalQueries.page';
+import DependentQuery from './Components/DependentQuery.page';
 
 const queryClient = new QueryClient();
 
@@ -51,6 +53,10 @@ function App() {
 
         <Route path='/parellal-queries' element = {<ParellalQueries/> }>
         </Route>
+        <Route path='/dynamic-parellal-queries'  element = {<DynamicParellalQueries heroes={[1,3]} />}>  </Route>
+
+        <Route path='/dependent-query'  element = {<DependentQuery />}>  </Route>
+      
 
         <Route path='/' element = {<HomePage />}>
     

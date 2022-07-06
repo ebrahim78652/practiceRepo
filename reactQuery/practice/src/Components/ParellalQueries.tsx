@@ -29,10 +29,12 @@ type superHero= {
 export default function ParellalQueries() {
 //do 2 queries at the same time
 
-const obj = useQuery("superheroes_names",fetchHeroes);
-const obj2 = useQuery("friends",fetchFriends);
+const {isLoading: heroesLoading} = useQuery("superheroes_names",fetchHeroes);
+const  {isLoading: friendsLoading}= useQuery("friends",fetchFriends);
 
-
+if(heroesLoading||friendsLoading){
+  return <div>is Loading</div>
+}
 
   return (
     <div>ParellalQueries</div>

@@ -14,6 +14,11 @@
         "id": 3,
         "name": "Wonder Woman",
         "alterEgo": "Princess Diana"
+      },
+      {
+        "id": 4,
+        "name": "inda",
+        "alterEgo": "porille"
       }
       
       ],
@@ -26,7 +31,7 @@
         },
         {
           "id": 2,
-          "name": "Rachel",
+          "name": "rachel",
           "alterEgo": "Jenifer"
         },
         {
@@ -35,6 +40,23 @@
           "alterEgo": "David"
         }
         
+        ],
+
+        "users": [
+          {
+            "id": "vishwas@example.com",
+            "channelId": "codevolution"
+          }
+        ],
+        "channels": [
+          {
+            "id": "codevolution",
+            "courses": ["react", "vue", "angular"]
+          }, 
+          {
+            "id": "pewdiepie",
+            "courses": ["react", "vue", "angular"]
+          }
         ]
 
   }
