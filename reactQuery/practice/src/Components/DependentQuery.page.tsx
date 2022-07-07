@@ -32,8 +32,6 @@ const id= data?data:undefined
 console.log(data); 
 const {data: random} = useQuery(["channels", data], fetchChannels, {enabled: !!id})
 
-
-
   return (
     <div>DependentQuery.page</div>
   )

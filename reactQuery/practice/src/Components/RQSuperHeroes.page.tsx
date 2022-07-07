@@ -16,7 +16,7 @@ const selectorFunction = (data: superHero[])=>{
 }
 
 export const RQSuperHeroesPage = () => {
-  const [isEnabled, setEnabled]= useState(true);
+  const [isEnabled, setEnabled]= useState(false);
   const {isLoading, isError, error, data, refetch} = useSuperheroes(isEnabled, setEnabled, selectorFunction);
 
     if(isLoading){

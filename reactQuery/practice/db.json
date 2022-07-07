@@ -57,6 +57,47 @@
             "id": "pewdiepie",
             "courses": ["react", "vue", "angular"]
           }
+        ], 
+
+        "colors": [
+          {
+            "id": 1,
+            "color": "red"
+          }, 
+          {
+            "id": 2,
+            "color": "blue"
+          }, 
+          {
+            "id": 3,
+            "color": "orange"
+          }, 
+          {
+            "id": 4,
+            "color": "bleck"
+          }, 
+          {
+            "id": 5,
+            "color": "yellow"
+          }, 
+          {
+            "id": 6,
+            "color": "purple"
+          }, 
+          {
+            "id": 7,
+            "color": "brown"
+          }, 
+          {
+            "id": 8,
+            "color": "green"
+          },
+        
+          {
+            "id": 9,
+            "color": "pink"
+          }
+        
         ]
 
   }

@@ -12,6 +12,7 @@ import HeroInfo from './Components/HeroInfo.page';
 import ParellalQueries from './Components/ParellalQueries';
 import DynamicParellalQueries from './Components/DynamicParellalQueries.page';
 import DependentQuery from './Components/DependentQuery.page';
+import PaginatedQuery from './Components/paginatedQuery';
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,9 @@ function App() {
           <li>
             <Link to='/parellal-queries'>Parellal Queries</Link>
           </li>
+          <li>
+            <Link to='/paginated-queries'>Paginated Queries</Link>
+          </li>
         </ul>
       </nav>
       <Routes>
@@ -56,8 +60,9 @@ function App() {
         <Route path='/dynamic-parellal-queries'  element = {<DynamicParellalQueries heroes={[1,3]} />}>  </Route>
 
         <Route path='/dependent-query'  element = {<DependentQuery />}>  </Route>
-      
 
+        <Route path='/paginated-queries'  element = {<PaginatedQuery />}>  </Route>
+      
         <Route path='/' element = {<HomePage />}>
     
         </Route>
