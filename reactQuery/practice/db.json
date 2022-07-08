@@ -21,24 +21,14 @@
       "alterEgo": "porille"
     },
     {
-      "name": "a",
-      "alterEgo": "s",
+      "name": "asdf",
+      "alterEgo": "sss",
       "id": 5
     },
     {
-      "name": "b",
-      "alterEgo": "d",
+      "name": "hey",
+      "alterEgo": "heyy",
       "id": 6
-    },
-    {
-      "name": "a",
-      "alterEgo": "m",
-      "id": 7
-    },
-    {
-      "name": "p",
-      "alterEgo": "q",
-      "id": 8
     }
   ],
   "friends": [

@@ -23,15 +23,7 @@ type superHero= {
 
     const obj = useQuery("superheroes_names",fetchUsers, {
       staleTime: 5 * 1000,
-      refetchInterval: (data: undefined|superHero[]|{name: string, id:number}[] )=>{
-        if(data!==undefined && data.length>=4){
-          if(setEnabled){
-            setEnabled(false);
-          }
-          return false
-        }
-        return 1000;
-      }, 
+    
       enabled: isEnabled,
       select,
 

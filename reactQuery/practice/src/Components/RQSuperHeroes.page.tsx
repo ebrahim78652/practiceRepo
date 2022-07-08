@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { QueryClient, QueryClientProvider, useQuery, useMutation} from "react-query";
+import { QueryClient, QueryClientProvider, useQuery, useMutation, useQueryClient} from "react-query";
 import useSuperheroes from '../Hooks/useSuperheroes';
 import { Link } from 'react-router-dom'
 
@@ -35,11 +35,16 @@ const addHero = async ({name, alterEgo}: {name: string, alterEgo:string})=>{
 }
 
 export const RQSuperHeroesPage = () => {
-  const [isEnabled, setEnabled]= useState(false);
+  const queryClient = useQueryClient();
+  const [isEnabled, setEnabled]= useState(true);
   const {isLoading, isError, error, data, refetch} = useSuperheroes(isEnabled, setEnabled, selectorFunction);
   const [heroName, setHeroName] = useState("")
   const [alterEgo, setAlterEgo] = useState("");
-  const mutation = useMutation(addHero);
+  const mutation = useMutation(addHero, {
+    onSuccess: ()=>{
+      queryClient.invalidateQueries(["superheroes_names"]);
+    }
+  });
   
 
   const onSubmit= ()=>{
