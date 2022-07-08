@@ -16,19 +16,14 @@
       "alterEgo": "Princess Diana"
     },
     {
-      "id": 4,
-      "name": "inda",
-      "alterEgo": "porille"
+      "name": "hero",
+      "alterEgo": "hero",
+      "id": 4
     },
     {
-      "name": "asdf",
-      "alterEgo": "sss",
+      "name": "random ",
+      "alterEgo": "nibba",
       "id": 5
-    },
-    {
-      "name": "hey",
-      "alterEgo": "heyy",
-      "id": 6
     }
   ],
   "friends": [

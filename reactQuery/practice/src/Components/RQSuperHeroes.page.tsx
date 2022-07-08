@@ -17,7 +17,7 @@ const selectorFunction = (data: superHero[])=>{
 
 const addHero = async ({name, alterEgo}: {name: string, alterEgo:string})=>{
 
- const res = await  fetch(`http://localhost:4000/superheroes`, {
+ const res = await  fetch(`http://localhost:4000/superheroes1`, {
     method: "post",
     headers: {
       'Content-Type': 'application/json'
@@ -41,9 +41,40 @@ export const RQSuperHeroesPage = () => {
   const [heroName, setHeroName] = useState("")
   const [alterEgo, setAlterEgo] = useState("");
   const mutation = useMutation(addHero, {
-    onSuccess: ()=>{
+   /*  onSuccess: ()=>{
       queryClient.invalidateQueries(["superheroes_names"]);
-    }
+    } */
+     onMutate: ({name, alterEgo})=>{
+
+      //cancel any refetches since they will overwrite the optimistic update. 
+      queryClient.cancelQueries("superheroes_names")
+
+      //now record what the previous data is: 
+      const prevData =  queryClient.getQueryData("superheroes_names");
+      queryClient.setQueryData("superheroes_names" , (old: (superHero[]|undefined))=>{
+        if(old){
+          return [...old, {id: old.length + 1 , name, alterEgo}];
+        } 
+        else{
+          return [{id: 1, name: "superman", alterEgo:"clark"}]
+        }
+      });
+
+      return prevData;
+    }, 
+
+    onError : (error: unknown, variables: {
+      name: string;
+      alterEgo: string;
+  }, context: unknown )=>{
+      console.dir(context);
+    }, 
+
+     onSettled: ()=>{
+
+      //sync the frontend with the client again here. 
+      queryClient.invalidateQueries("superheroes_names");
+    } 
   });
   
 
@@ -61,6 +92,12 @@ export const RQSuperHeroesPage = () => {
     if(isError && error instanceof Error){
       return (
         <h2>{error.message}</h2>
+      )
+    }
+
+    if(mutation.isError && mutation.error instanceof Error){
+      return (
+        <h2>{mutation.error.message}</h2>
       )
     }
 
