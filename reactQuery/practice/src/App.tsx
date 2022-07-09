@@ -13,6 +13,7 @@ import ParellalQueries from './Components/ParellalQueries';
 import DynamicParellalQueries from './Components/DynamicParellalQueries.page';
 import DependentQuery from './Components/DependentQuery.page';
 import PaginatedQuery from './Components/paginatedQuery';
+import InfiniteQuery from './Components/InfiniteQueries.page';
 
 const queryClient = new QueryClient();
 
@@ -38,7 +39,7 @@ function App() {
             <Link to='/parellal-queries'>Parellal Queries</Link>
           </li>
           <li>
-            <Link to='/paginated-queries'>Paginated Queries</Link>
+            <Link to='/infinite-queries'>infinite Queries</Link>
           </li>
         </ul>
       </nav>
@@ -62,6 +63,8 @@ function App() {
         <Route path='/dependent-query'  element = {<DependentQuery />}>  </Route>
 
         <Route path='/paginated-queries'  element = {<PaginatedQuery />}>  </Route>
+
+        <Route path='/infinite-queries'  element = {<InfiniteQuery />}>  </Route>
       
         <Route path='/' element = {<HomePage />}>
     
