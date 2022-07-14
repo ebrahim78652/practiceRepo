@@ -63,3 +63,12 @@ export default function InfiniteQuery() {
     </div>
   )
 }
+
+
+const mutate = useMutation((data) =>
+  axios.post('/something', { data })
+    .then((somethingResult) =>
+        axios.put('/somethingElse', { somethingResult } )
+  )
+)
+<button onClick={() => mutate('data') />
