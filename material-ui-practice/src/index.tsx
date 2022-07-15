@@ -9,12 +9,16 @@ import {
   Route,
 } from "react-router-dom";
 import { mainItems } from './Components/NavBar/consts/navBarMainItems';
+import { ThemeProvider } from '@mui/material/styles';
+import { dashboardTheme } from './dashboardTheme';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
+     <ThemeProvider theme={dashboardTheme}>
      <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
@@ -24,7 +28,7 @@ root.render(
       </Route>
     </Routes>
   </BrowserRouter>
-
+  </ThemeProvider>
   </React.StrictMode>
 );
 

@@ -1,8 +1,8 @@
 import React from 'react'
 import Grid from '@mui/material/Grid';
-import CommonButton from './Common/CommonButton';
+import CommonButton from '../Common/CommonButton';
 import { blue } from '@mui/material/colors';
-
+import NotificationBell from  '../Common/NotificationBell/NotificationBell'
 function Authentication() {
 
   const buttonStyles = {
@@ -15,7 +15,7 @@ function Authentication() {
 
     //below styles only in the button that has the variant = contained
     '&.MuiButton-contained': {
-        backgroundColor: '#009be5',
+        /* backgroundColor: '#009be5', */
         '&:hover': {
             backgroundColor: '#006db3'
         },
@@ -36,21 +36,8 @@ function Authentication() {
 
     //make the 2 buttons here
     <Grid item xs = {8}>
-      <div>
-      <CommonButton
-                sx={buttonStyles}
-                variant="contained"
-            >
-                Add user
-            </CommonButton>
-            <CommonButton
-                sx={buttonStyles}
-                variant="outlined"
-            >
-                Add user
-            </CommonButton>
-      </div>
-      
+
+      <NotificationBell badgeContent={3}></NotificationBell>          
       Authentication</Grid>
   )
 }

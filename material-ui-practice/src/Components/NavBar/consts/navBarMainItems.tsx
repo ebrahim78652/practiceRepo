@@ -1,10 +1,10 @@
 
-import Authentication from "../../Authentication.page"
-import Database from "../../Database.page"
-import Storage from "../../Storage.page"
-import Hosting from "../../Hosting.page"
-import Functions from "../../Functions.page"
-import MachineLearning from "../../MachineLearning.page"
+import Authentication from "../../Pages/Authentication.page"
+import Database from "../../Pages/Database.page"
+import Storage from "../../Pages/Storage.page"
+import Hosting from "../../Pages/Hosting.page"
+import Functions from "../../Pages/Functions.page"
+import MachineLearning from "../../Pages/MachineLearning.page"
 
 
 export const mainItems = [{
