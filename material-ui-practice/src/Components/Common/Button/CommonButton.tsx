@@ -19,13 +19,14 @@ type buttonProps = {
     variant?: OverridableStringUnion<
     'text' | 'outlined' | 'contained',
     ButtonPropsVariantOverrides>;
+    onClick?: (a: React.MouseEvent<HTMLButtonElement>)=>void
 }
 
-function CommonButton({children, color, disabled, size, sx, variant}: buttonProps){
+function CommonButton({children, color, disabled, size, sx, variant, onClick}: buttonProps){
 
 
     return (
-    <Button children={children} color={color} disabled={disabled} size={size} sx={sx} variant = {variant}></Button>
+    <Button children={children} color={color} disabled={disabled} size={size} sx={sx} variant = {variant} onClick={onClick}></Button>
     ) 
   
 }
