@@ -18,14 +18,22 @@ function App() {
    <> 
    <Box sx ={{
     display: 'flex',
-   }
-   }>
+   }}>
    <NavBar />
+    <Box sx={{
+      display: "flex",
+      flexDirection: "column",
+      flexGrow:1,               
+    }}>
+
     <Header title={location.pathname.replace("/", "")}></Header>
+    <Outlet />
+    </Box>
+   
    </Box>
 
     
-    <Outlet />
+   
    </>
 
  
