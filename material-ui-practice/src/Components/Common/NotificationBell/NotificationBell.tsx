@@ -19,6 +19,9 @@ function NotificationBell({badgeContent}:{badgeContent:number}) {
     const open = Boolean(anchorEl);
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+      if(!badgeContent){
+        return
+      }
       setAnchorEl(event.currentTarget);
     };
 
@@ -26,6 +29,15 @@ function NotificationBell({badgeContent}:{badgeContent:number}) {
       setAnchorEl(null);
     };
 
+    /*  */
+    const menuItems = [{
+        id: 1, 
+        label: "first Item"
+    }, 
+    {
+        id:2, 
+        label: "secodn Item"
+    }]
     /*  */
     return (
     <>
@@ -41,7 +53,7 @@ function NotificationBell({badgeContent}:{badgeContent:number}) {
     </div>
 
     {/*Basic Menu that opens when clicked on the notifications button  */}
-     <BasicMenu open={open} handleClose={handleClose} anchorEl = {anchorEl} ></BasicMenu>       
+     <BasicMenu open={open} handleClose={handleClose} anchorEl = {anchorEl} menuItems ={menuItems}  ></BasicMenu>       
     {/*  */}
     </>     
   )

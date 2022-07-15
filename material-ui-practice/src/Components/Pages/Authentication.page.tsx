@@ -3,7 +3,6 @@ import Grid from '@mui/material/Grid';
 import CommonButton from '../Common/Button/CommonButton';
 import { blue } from '@mui/material/colors';
 import NotificationBell from  '../Common/NotificationBell/NotificationBell'
-import BasicMenu from '../Common/BasicMenu/BasicMenu';
 function Authentication() {
 
   const buttonStyles = {

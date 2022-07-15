@@ -7,9 +7,9 @@ type BasicMenuProps = {
     open: boolean, 
     handleClose:()=>void, 
     anchorEl: null | HTMLElement, 
-
+    menuItems: {id: number, label:string}[]
 }
-function BasicMenu({open, handleClose, anchorEl}: BasicMenuProps) {
+function BasicMenu({open, handleClose, anchorEl, menuItems}: BasicMenuProps) {
 
   return (
     <Menu
@@ -21,9 +21,12 @@ function BasicMenu({open, handleClose, anchorEl}: BasicMenuProps) {
       'aria-labelledby': 'basic-button',
     }}
   >
-    <MenuItem onClick={handleClose}>Profile</MenuItem>
-    <MenuItem onClick={handleClose}>My account</MenuItem>
-    <MenuItem onClick={handleClose}>Logout</MenuItem>
+    {
+        menuItems.map((item)=>
+        <MenuItem key={item.id} onClick = {handleClose}>
+            {item.label}
+        </MenuItem>)
+    }
   </Menu>
 
   )
