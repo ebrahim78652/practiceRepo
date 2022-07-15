@@ -2,7 +2,7 @@ import CommonButton from '../Button/CommonButton'
 import React from 'react'
 import Badge from '@mui/material/Badge';
 import Tooltip from '@mui/material/Tooltip';
-
+import BasicMenu from '../BasicMenu/BasicMenu';
 /*  */
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -12,6 +12,7 @@ function NotificationBell({badgeContent}:{badgeContent:number}) {
     const newNotifications=`You have ${badgeContent} new Notifications`;
     const noNotifications=`You have no new Notifications`;
 
+    //methods for the basic menu
     /*  */
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
@@ -39,22 +40,8 @@ function NotificationBell({badgeContent}:{badgeContent:number}) {
         </Tooltip>
     </div>
 
-    {/*  */}
-
-    <Menu
-    id="basic-menu"
-    anchorEl={anchorEl}
-    open={open}
-    onClose={handleClose}
-    MenuListProps={{
-      'aria-labelledby': 'basic-button',
-    }}
-  >
-    <MenuItem onClick={handleClose}>Profile</MenuItem>
-    <MenuItem onClick={handleClose}>My account</MenuItem>
-    <MenuItem onClick={handleClose}>Logout</MenuItem>
-  </Menu>
-
+    {/*Basic Menu that opens when clicked on the notifications button  */}
+     <BasicMenu open={open} handleClose={handleClose} anchorEl = {anchorEl} ></BasicMenu>       
     {/*  */}
     </>     
   )
