@@ -1,9 +1,6 @@
 import React from 'react'
 import Grid from '@mui/material/Grid';
-import CommonButton from '../Common/Button/CommonButton';
-import { blue } from '@mui/material/colors';
-import NotificationBell from  '../Common/NotificationBell/NotificationBell'
-import Avatar from '@mui/material/Avatar';
+import Header from '../Common/Header/Header';
 
 function Authentication() {
 
@@ -38,11 +35,8 @@ function Authentication() {
 
     //make the 2 buttons here
     <Grid item xs = {8}>
-
-      <NotificationBell></NotificationBell>    
-      <CommonButton variant = "text">Docs</CommonButton>
-      <Avatar alt="Remy Sharp" src="../../../public/logo512.png" />
-      Authentication</Grid>
+        <Header></Header>
+    </Grid>
   )
 }
 
