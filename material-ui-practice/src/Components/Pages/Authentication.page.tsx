@@ -3,6 +3,8 @@ import Grid from '@mui/material/Grid';
 import CommonButton from '../Common/Button/CommonButton';
 import { blue } from '@mui/material/colors';
 import NotificationBell from  '../Common/NotificationBell/NotificationBell'
+import Avatar from '@mui/material/Avatar';
+
 function Authentication() {
 
   const buttonStyles = {
@@ -39,6 +41,7 @@ function Authentication() {
 
       <NotificationBell></NotificationBell>    
       <CommonButton variant = "text">Docs</CommonButton>
+      <Avatar alt="Remy Sharp" src="../../../public/logo512.png" />
       Authentication</Grid>
   )
 }
