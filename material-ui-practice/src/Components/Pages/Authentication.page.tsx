@@ -31,9 +31,8 @@ function Authentication() {
 };
   return (
     //make the 2 buttons here
-    <Grid item xs = {8}>
-        <Header title="Authentication"></Header>
-    </Grid>
+  <>
+  </>
   )
 }
 

@@ -6,12 +6,16 @@ import { DistributiveOmit, OverridableStringUnion } from '@mui/types';
 export interface ButtonPropsColorOverrides {}
 export interface ButtonPropsSizeOverrides {}
 export interface ButtonPropsVariantOverrides {}
-
+declare module '@mui/material/Button' {
+    interface ButtonPropsColorOverrides {
+      white: true;
+    }
+  }
 
 type buttonProps = {
     children?: React.ReactNode, 
     color?: 	OverridableStringUnion<
-    'inherit' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning' , ButtonPropsColorOverrides>,
+    'inherit' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning'|"white" , ButtonPropsColorOverrides>,
     disabled?: boolean,
     size?: OverridableStringUnion<'small' | 'medium' | 'large', ButtonPropsSizeOverrides>,
 

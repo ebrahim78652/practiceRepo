@@ -27,7 +27,7 @@ function NavBar() {
             width: drawerWidth,
             boxSizing: 'border-box',
             backgroundColor: '#091d48',
-            color: "white"
+            color: "#f8f3f3de"
           },
         }}
         variant="permanent"
@@ -39,7 +39,7 @@ function NavBar() {
           {mainItems.map((item, index) => (
             <ListItem key={item.id } disablePadding>
               <ListItemButton onClick={(event=>{navigate(item.route)})}>
-                <ListItemText primary={item.label} />
+                <ListItemText  primary={item.label} />
               </ListItemButton>
             </ListItem>
           ))}
