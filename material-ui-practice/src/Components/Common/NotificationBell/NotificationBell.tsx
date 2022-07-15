@@ -8,9 +8,8 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 /*  */
 
-function NotificationBell({badgeContent}:{badgeContent:number}) {
-    const newNotifications=`You have ${badgeContent} new Notifications`;
-    const noNotifications=`You have no new Notifications`;
+function NotificationBell() {
+ 
 
     //methods for the basic menu
     /*  */
@@ -19,7 +18,7 @@ function NotificationBell({badgeContent}:{badgeContent:number}) {
     const open = Boolean(anchorEl);
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-      if(!badgeContent){
+      if(!menuItems.length){
         return
       }
       setAnchorEl(event.currentTarget);
@@ -39,12 +38,16 @@ function NotificationBell({badgeContent}:{badgeContent:number}) {
         label: "secodn Item"
     }]
     /*  */
+
+    const newNotifications=`You have ${menuItems.length} new Notifications`;
+    const noNotifications=`You have no new Notifications`;
+
     return (
     <>
       
     <div>
-        <Tooltip title = {badgeContent?newNotifications:noNotifications} >
-            <Badge badgeContent={badgeContent?badgeContent:0} color="primary">
+        <Tooltip title = {menuItems.length?newNotifications:noNotifications} >
+            <Badge badgeContent={menuItems.length?menuItems.length:0} color="primary">
             <CommonButton onClick={handleClick} variant = "outlined" size="small">
                 Notifications
             </CommonButton>

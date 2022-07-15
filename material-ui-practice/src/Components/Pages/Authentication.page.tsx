@@ -37,7 +37,7 @@ function Authentication() {
     //make the 2 buttons here
     <Grid item xs = {8}>
 
-      <NotificationBell badgeContent={3}></NotificationBell>    
+      <NotificationBell></NotificationBell>    
       Authentication</Grid>
   )
 }
