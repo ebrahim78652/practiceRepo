@@ -38,6 +38,7 @@ function Authentication() {
     <Grid item xs = {8}>
 
       <NotificationBell></NotificationBell>    
+      <CommonButton variant = "text">Docs</CommonButton>
       Authentication</Grid>
   )
 }
