@@ -15,7 +15,10 @@ const BasicCard = () => {
       width: "80vw",
       display: 'flex' ,
       justifyContent: 'center',
-      margin: "10vh auto",  
+      margin: "10vh auto", 
+      border: "1px solid #0000003d" ,
+      borderRadius: "8px",
+      padding: "0.5rem"
     },
 
     card:{
@@ -40,9 +43,9 @@ const BasicCard = () => {
             <SearchBar placeholder="please enter some information here" onChange={(e)=>{console.log(e.target.value)}}></SearchBar>
           
     
-          <CardActions>
-            <Button size="small">Learn More</Button>
-          </CardActions>
+          <Typography sx={{textAlign: "center", color: "#00000082", margin: "2rem"}} variant = "body1">
+            No Users For this Project yet
+          </Typography>
         </Card>
       </Box>
 
