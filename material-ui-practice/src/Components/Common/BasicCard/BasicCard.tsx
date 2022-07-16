@@ -6,25 +6,49 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
+import SearchBar from '../SearchBar/SearchBar';
 
 const BasicCard = () => {
+
+  const styles={
+    container: {
+      width: "80vw",
+      display: 'flex' ,
+      justifyContent: 'center',
+      margin: "10vh auto",  
+    },
+
+    card:{
+      width: "800%"
+
+    },
+
+    topRow:{
+      display: 'flex',
+      backgroundColor: "#f5f5f5",
+     
+    }
+
+
+    
+}
   
     return (
-      <Card sx={{ minWidth: 275 }}>
-        <CardContent>
-          <Typography sx={{ fontSize: 14 }} color="secondary" gutterBottom>
-            Word of the Day
-          </Typography>
-  
-        </CardContent>
-        <CardActions>
-          <Button size="small">Learn More</Button>
-        </CardActions>
-      </Card>
+      <Box sx={styles.container}>
+        <Card sx ={styles.card}>
+        
+            <SearchBar placeholder="please enter some information here" onChange={(e)=>{console.log(e.target.value)}}></SearchBar>
+          
+    
+          <CardActions>
+            <Button size="small">Learn More</Button>
+          </CardActions>
+        </Card>
+      </Box>
+
     );
   }
   
 
 
-export default BasicCard
+export default BasicCard                                
